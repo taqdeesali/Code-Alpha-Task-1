@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sura - Plans</title>
+  <link rel="stylesheet" href="plans.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+<body>
+
+  <!-- HEADER -->
+<header>
+  <div class="logo">
+    <img src="covers/logo.png" alt="Sura Logo">
+    <span>Sura</span>
+  </div>
+
+  <!-- Hamburger / toggle button -->
+  <div class="menu-toggle" id="menuToggle">
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <nav id="navLinks">
+    <a href="home.html">Home</a>
+    <a href="player.html">Player</a>
+    <a href="plans.html">Plans</a>
+    <a href="Loginsignup.html">Login/Signup</a>
+  </nav>
+</header>
+
+  <!-- MAIN PLANS SECTION -->
+  <main class="plans-section">
+    <h2>Choose Your Plan</h2>
+    <div class="plans-container">
+      <!-- Basic Plan -->
+      <div class="plan-card">
+        <h3>Basic</h3>
+        <p class="price">PKR 500</p>
+        <ul>
+          <li>Access to basic features</li>
+          <li>1 Month Support</li>
+          <li>Single User</li>
+        </ul>
+        <div class="payment-icons">
+          <img src="covers/easypaisa.png" alt="Easypaisa">
+          <img src="covers/jazzcash.png" alt="JazzCash">
+          <img src="covers/visa.png" alt="visacard">
+          <img src="covers/mastercard.png" alt="MasterCard">
+        </div>
+        <button class="buy-btn" data-plan="Basic" data-price="500">Buy Now</button>
+      </div>
+
+      <!-- Standard Plan -->
+      <div class="plan-card popular">
+        <h3>Standard</h3>
+        <p class="price">PKR 1000</p>
+        <ul>
+          <li>All Basic features</li>
+          <li>3 Months Support</li>
+          <li>Up to 3 Users</li>
+        </ul>
+        <div class="payment-icons">
+          <img src="covers/easypaisa.png" alt="Easypaisa">
+          <img src="covers/jazzcash.png" alt="JazzCash">
+          <img src="covers/visa.png" alt="visacard">
+          <img src="covers/mastercard.png" alt="MasterCard">
+        </div>
+        <button class="buy-btn" data-plan="Standard" data-price="1000">Buy Now</button>
+      </div>
+
+      <!-- Premium Plan -->
+      <div class="plan-card">
+        <h3>Premium</h3>
+        <p class="price">PKR 2000</p>
+        <ul>
+          <li>All Standard features</li>
+          <li>12 Months Support</li>
+          <li>Unlimited Users</li>
+        </ul>
+        <div class="payment-icons">
+          <img src="covers/easypaisa.png" alt="Easypaisa">
+          <img src="covers/jazzcash.png" alt="JazzCash">
+          <img src="covers/visa.png" alt="visacard">
+          <img src="covers/mastercard.png" alt="MasterCard">
+        </div>
+        <button class="buy-btn" data-plan="Premium" data-price="2000">Buy Now</button>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+   <section class="faq-section">
+  <h2>Frequently Asked Questions</h2>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      What payment methods are available?
+      <span class="icon">⌄</span>
+    </div>
+    <div class="faq-answer">
+      We support EasyPaisa, JazzCash, Bank Transfer, and all major debit/credit cards.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      Can I upgrade my plan later?
+      <span class="icon">⌄</span>
+    </div>
+    <div class="faq-answer">
+      Yes! You can upgrade anytime from your account dashboard.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      Is there a refund policy?
+      <span class="icon">⌄</span>
+    </div>
+    <div class="faq-answer">
+      Refunds are available within 7 days of purchase if you face any issues.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      Can multiple users share one account?
+      <span class="icon">⌄</span>
+    </div>
+    <div class="faq-answer">
+      Basic plan is single-user only. Standard allows up to 3 users. Premium is unlimited.
+    </div>
+  </div>
+</section>
+
+  </main>
+
+  <!-- MODAL -->
+  <div class="modal" id="planModal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3>Plan Selected</h3>
+      <p id="modalText"></p>
+      <button id="confirmBtn">Confirm Purchase</button>
+    </div>
+  </div>
+
+  <script src="plans.js"></script>
+</body>
+</html>

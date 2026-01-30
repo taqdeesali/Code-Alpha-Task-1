@@ -1,0 +1,288 @@
+/* ================= RESET & BODY ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: radial-gradient(circle at top, #1b0b2e, #05010a);
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ================= HEADER ================= */
+header {
+  height: 72px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  background: rgba(15, 8, 30, 0.95);
+  box-shadow: 0 0 20px #7b2cbf;
+  position: relative;
+  z-index: 100;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 100%;
+  margin-left: 63px; /* Desktop default */
+}
+
+header .logo img {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 0 10px #7b2cbf);
+}
+
+header .logo span {
+  font-size: 22px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+/* 🌟 HAMBURGER ICON (DESKTOP HIDDEN BY DEFAULT) 🌟 */
+.menu-toggle {
+  display: none;
+}
+
+/* ================= NAV LINKS ================= */
+header nav a {
+  margin-left: 25px;
+  text-decoration: none;
+  color: white;
+  opacity: 0.85;
+  font-size: 15px;
+  transition: 0.2s ease;
+}
+
+header nav a:hover {
+  color: #b56bff;
+  opacity: 1;
+}
+
+/* ================= AUTH SECTION ================= */
+.auth-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 20px;
+  flex-grow: 1;
+}
+
+.auth-card {
+  background: rgba(35, 15, 60, 0.95);
+  padding: 50px 40px;
+  border-radius: 20px;
+  width: 400px;
+  max-width: 95%;
+  box-shadow: 0 0 35px #b56bff;
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ================= TABS ================= */
+.tabs {
+  display: flex;
+  margin-bottom: 35px;
+  border-bottom: 2px solid #7b2cbf;
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 16px 0;
+  background: none;
+  border: none;
+  color: #ddd;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 1.25rem;
+  letter-spacing: 0.5px;
+}
+
+.tab-btn.active {
+  color: #ffffff;
+  border-bottom: 5px solid #b56bff;
+}
+
+/* ================= FORM ================= */
+.auth-form {
+  display: none;
+  flex-direction: column;
+}
+
+.auth-form.active {
+  display: flex;
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 16px 14px;
+  background: rgba(50, 20, 80, 0.85);
+  border: 2px solid #7b2cbf;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 1.2rem;
+  outline: none;
+  transition: border 0.3s, background 0.3s;
+}
+
+.input-group input:focus {
+  border-color: #b56bff;
+  background: rgba(59, 20, 90, 0.9);
+}
+
+.input-group label {
+  position: absolute;
+  top: 16px;
+  left: 14px;
+  color: #fff;
+  pointer-events: none;
+  transition: 0.3s;
+  font-weight: 600;
+  font-size: 1.05rem;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label {
+  top: -12px;
+  left: 14px;
+  font-size: 0.95rem;
+  color: #ffffff;
+  background: rgba(35, 15, 60, 0.95);
+  padding: 0 7px;
+  border-radius: 4px;
+}
+
+/* ================= BUTTON ================= */
+.auth-btn {
+  background: #b56bff;
+  color: #fff;
+  border: none;
+  padding: 16px 0;
+  border-radius: 12px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 15px;
+  letter-spacing: 1px;
+}
+
+.auth-btn:hover {
+  background: #a64cf4;
+  transform: scale(1.05);
+}
+/* ================= HAMBURGER (DESKTOP DEFAULT) ================= */
+.menu-toggle {
+    display: none;          /* hidden on desktop */
+    font-size: 28px;
+    cursor: pointer;
+    color: #ffffff;
+    z-index: 200;
+}
+
+/* ================= MOBILE / TABLET ================= */
+@media (max-width: 1024px) {
+
+    /* Show hamburger */
+    .menu-toggle {
+        display: block;
+    }
+     header {
+    padding: 0 35px 0 45px;
+  }
+
+  header .logo {
+    margin-left: 0; /* Logo moved to left */
+  }
+
+    /* Hide desktop nav */
+    nav {
+        display: none;
+    }
+
+    /* Mobile dropdown nav */
+    nav.show {
+        display: flex;
+    }
+
+    nav {
+        position: absolute;
+        top: 72px;
+        right: 0;
+        width: 190px;
+        background: rgba(15, 8, 30, 0.95);
+        flex-direction: column;
+        padding: 20px 0;
+        border-left: 1px solid #7b2cbf;
+        border-bottom-left-radius: 15px;
+        z-index: 100;
+    }
+
+    nav a {
+        margin: 10px 0;
+        font-size: 16px;
+        text-align: center;
+    }
+}
+
+  .auth-section {
+    padding: 20px;
+  }
+
+  /* Auth section adjustments - push card to bottom */
+  .auth-section {
+    align-items: flex-center;
+    padding: 0 20px 20px;
+  }
+
+  .auth-card {
+    box-shadow: 0 10px 35px #b56bff;
+  }
+
+  /* Song grid horizontal scroll */
+  .songs-grid {
+    display: flex;
+    overflow-x: auto;
+    gap: 16px;
+    padding: 10px 5px 15px;
+    scroll-snap-type: x mandatory;
+  }
+
+  .songs-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .song-card {
+    min-width: 150px;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+  }
+
+  .song-card img {
+    height: 140px;
+  }
+
+  #exploreTitle {
+    font-size: 26px;
+  }
+

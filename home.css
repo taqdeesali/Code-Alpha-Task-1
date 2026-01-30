@@ -1,0 +1,273 @@
+/* --- GLOBAL RESET & BODY --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", sans-serif;
+    /* Use the radial gradient background you provided */
+    background: radial-gradient(circle at top, #1b0b2e, #05010a);
+    color: white;
+    min-height: 100vh;
+}
+
+/* --- HEADER (Desktop Default) --- */
+header {
+    height: 72px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    background: rgba(15, 8, 30, 0.95);
+    box-shadow: 0 0 20px #7b2cbf;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* Desktop Logo Spacing */
+    margin-left: 60px;
+}
+
+header .logo img {
+    height: 50px;
+    filter: drop-shadow(0 0 10px #7b2cbf);
+}
+
+header nav a {
+    margin-left: 25px;
+    text-decoration: none;
+    color: white;
+    opacity: 0.85;
+}
+
+header nav a:hover {
+    color: #b56bff;
+}
+
+/* Hamburger icon (Default Hidden on Desktop) */
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #fff;
+}
+
+/* --- MAIN (Explore Section) --- */
+.explore {
+    padding: 40px 30px 60px;
+}
+
+.search-box {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.search-box input {
+    width: 75%;
+    max-width: 720px;
+    padding: 14px;
+    border-radius: 18px;
+    border: none;
+    font-size: 17px;
+    background: rgba(35, 15, 60, 0.95);
+    color: white;
+    box-shadow: 0 0 22px rgba(123, 44, 191, 0.5);
+}
+
+#exploreTitle {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 35px;
+    text-shadow: 0 0 15px rgba(123, 44, 191, 0.6);
+}
+
+/* SONG GRID (DESKTOP) */
+.songs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 180px);
+    justify-content: center;
+    gap: 30px;
+}
+
+.song-card {
+    width: 180px;
+    background: rgba(35, 15, 60, 0.9);
+    border-radius: 15px;
+    padding: 12px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 0 12px #7b2cbf;
+    transition: 0.25s;
+}
+
+.song-card:hover {
+    transform: translateY(-6px) scale(1.05);
+    box-shadow: 0 0 28px #a64cf4;
+}
+
+.song-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.song-card h3 {
+    font-size: 15px;
+    margin-top: 8px;
+    color: #e0c3ff;
+}
+
+.song-card p {
+    font-size: 13px;
+    color: #aaa;
+}
+
+/* CATEGORIES BOXES */
+.categories-title {
+    margin-top: 50px;
+    margin-bottom: 60px;
+    font-size: 32px;
+    text-align: center;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+}
+
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+.category-card {
+    background: rgba(35, 15, 60, 0.9);
+    width: 150px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 0 15px #7b2cbf;
+    transition: 0.25s;
+}
+
+.category-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 28px #a64cf4;
+}
+
+.category-card span {
+    font-size: 16px;
+    color: #fff;
+    text-shadow: 0 0 12px #fff;
+    font-weight: bold;
+}
+
+/* --- PAYMENT ICONS (Plans Section Fixes Applied) --- */
+.payment-icons {
+    /* Sets up the row layout */
+    display: flex;
+    /* Centers the icons horizontally */
+    justify-content: center;
+    /* Increased gap between the icons for better spacing */
+    gap: 20px; /* FIXED: Increased gap from 11px */
+    margin-bottom: 20px;
+}
+
+.payment-icons img {
+    /* Increased height for bigger icons */
+    height: 50px; /* FIXED: Increased size from 40px to 50px */
+    /* Keeps the aspect ratio */
+    width: auto;
+    /* Retain and slightly increase the glowing shadow effect */
+    filter: drop-shadow(0 0 10px #b56bff);
+    /* Keep the hover transition */
+    transition: transform 0.3s ease-in-out;
+}
+
+.payment-icons img:hover {
+    /* Keep the scaling effect on hover */
+    transform: scale(1.3); /* FIXED: Slightly increased scale for impact */
+}
+
+
+/* --- MOBILE / TABLET STYLES (Max-width 1024px) --- */
+@media (max-width: 1024px) {
+    /* HEADER FIXES: Logo to the far left, Toggle to the far right */
+    header {
+        /* Reduced horizontal padding for closer-to-edge placement */
+        padding: 0 35px 0 45px; /* FIXED: Reduced from 20px */
+    }
+
+    header .logo {
+        /* Overrides desktop margin for mobile */
+        margin-left: 0; /* FIXED: Removed 60px margin */
+    }
+
+    header .logo img {
+        height: 42px;
+    }
+
+    .menu-toggle {
+        display: block; /* Show hamburger icon */
+    }
+
+    nav {
+        position: absolute;
+        top: 72px;
+        right: 0;
+        background: rgba(15, 8, 30, 0.95);
+        width: 190px;
+        flex-direction: column;
+        display: none; /* hidden by default */
+        text-align: center;
+        padding: 20px 0;
+        border-left: 1px solid #7b2cbf;
+        border-bottom-left-radius: 15px;
+        /* Ensure the nav is above other content */
+        z-index: 10; 
+    }
+
+    nav.show {
+        display: flex; /* show when toggle clicked */
+    }
+
+    nav a {
+        margin: 10px 0;
+        font-size: 16px;
+    }
+
+    /* MOBILE SONG SCROLL */
+    .songs-grid {
+        display: flex;
+        overflow-x: auto;
+        gap: 16px;
+        padding: 10px 5px 15px;
+        scroll-snap-type: x mandatory;
+    }
+
+    .songs-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .song-card {
+        min-width: 150px;
+        flex-shrink: 0;
+        scroll-snap-align: start;
+    }
+
+    .song-card img {
+        height: 140px;
+    }
+
+    #exploreTitle {
+        font-size: 26px;
+    }
+}
